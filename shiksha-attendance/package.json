@@ -1,6 +1,6 @@
 {
   "name": "shiksha-attendance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Npm package for Shiksha-Attendance service integration with Interface service. ",
   "main": "index.js",
   "scripts": {

@@ -12,17 +12,6 @@ module.exports = {
       },
     },
     {
-      sourceRoute: "/interface/v1/event/:id",
-      type: "PATCH",
-      inSequence: true,
-      orchestrated: true,
-      targetRoute: {
-        path: "/event-service/event/v1/:id",
-        type: "PATCH",
-        functionName: "updateEvent",
-      },
-    },
-    {
       sourceRoute: "/interface/v1/event/list",
       type: "POST",
       inSequence: true,
@@ -31,6 +20,17 @@ module.exports = {
         path: "/event-service/event/v1/list",
         type: "POST",
         functionName: "listEvents",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/event/:id",
+      type: "PATCH",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/event-service/event/v1/:id",
+        type: "PATCH",
+        functionName: "updateEvent",
       },
     },
   ],

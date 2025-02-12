@@ -107,7 +107,7 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/cohort/cohortHierarchy/:id",
         type: "GET",
-        functionName: "getCohortDetails",
+        functionName: "getCohortHierarchy",
       },
     },
     {
@@ -118,7 +118,7 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/cohortmember/list",
         type: "POST",
-        functionName: "getCohortMember",
+        functionName: "getCohortMembers",
       },
     },
     {
@@ -140,7 +140,7 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/cohortmember/read/:id",
         type: "GET",
-        functionName: "getCohortDetails",
+        functionName: "getCohortmember",
       },
     },
     {
@@ -151,7 +151,7 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/cohortmember/update/:id",
         type: "PUT",
-        functionName: "getCohortDetails",
+        functionName: "updateCohortmember",
       },
     },
     {
@@ -162,7 +162,7 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/read/:id",
         type: "GET",
-        functionName: "getCohortDetails",
+        functionName: "getUser",
       },
     },
     {
@@ -173,7 +173,7 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/update/:id",
         type: "PATCH",
-        functionName: "getCohortDetails",
+        functionName: "updateUser",
       },
     },
     {
@@ -184,7 +184,194 @@ module.exports = {
       targetRoute: {
         path: "/user/v1/list",
         type: "POST",
-        functionName: "getCohortDetails",
+        functionName: "getUsers",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/auth/login",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/auth/login",
+        type: "POST",
+        functionName: "authLogin",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/auth/refresh",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/auth/refresh",
+        type: "POST",
+        functionName: "authRefresh",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/auth/logout",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/auth/logout",
+        type: "POST",
+        functionName: "authLogout",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/auth",
+      type: "GET",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/auth",
+        type: "GET",
+        functionName: "authDetails",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/reset-password",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/reset-password",
+        type: "POST",
+        functionName: "resetPassword",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/forgot-password",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/forgot-password",
+        type: "POST",
+        functionName: "forgotPassword",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/password-reset-link",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/password-reset-link",
+        type: "POST",
+        functionName: "passwordResetLink",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/user/suggestUsername",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/suggestUsername",
+        type: "POST",
+        functionName: "suggestUsername",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/form/read",
+      type: "GET",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/form/read",
+        type: "GET",
+        functionName: "formRead",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/fields/options/read",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/fields/options/read",
+        type: "POST",
+        functionName: "fieldOptionRead",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/fields/options/delete/:id",
+      type: "DELETE",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/fields/options/delete/:id",
+        type: "DELETE",
+        functionName: "fieldOptionDelete",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/fields/update/:id",
+      type: "PATCH",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/fields/update/:id",
+        type: "POST",
+        functionName: "fieldUpdate",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/academicyears/list",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/academicyears/list",
+        type: "POST",
+        functionName: "academicyearsList",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/cohortmember/bulkCreate",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/cohortmember/bulkCreate",
+        type: "POST",
+        functionName: "cohortmemberBulkCreate",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/fields/values/delete/:id",
+      type: "DELETE",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/fields/values/delete/:id",
+        type: "DELETE",
+        functionName: "fieldValueDelete",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/tenant/delete",
+      type: "DELETE",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/tenant/delete",
+        type: "DELETE",
+        functionName: "deleteTenant",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/tenant/search",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/tenant/search",
+        type: "POST",
+        functionName: "searchTenant",
       },
     },
   ],

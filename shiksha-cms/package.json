@@ -1,7 +1,7 @@
 {
-  "name": "shiksha-tracking",
+  "name": "shiksha-cms",
   "version": "1.0.1",
-  "description": "Npm package for Shiksha-Tracking service integration with Interface service. ",
+  "description": "Npm package for Shiksha-cms service integration with Interface service. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/tekdi/utils.git"
   },
-  "author": "Shubham Jha",
+  "author": "Arati Kulkarni",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tekdi/utils/issues"
