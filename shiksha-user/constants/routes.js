@@ -700,7 +700,7 @@ module.exports = {
       orchestrated: true,
       targetRoute: {
         path: "/user/v1/discussions/groups/messages",
-        type: "POST",
+        type: "GET",
         functionName: "getMessagesOfGroup",
       },
     },
@@ -710,8 +710,8 @@ module.exports = {
       inSequence: true,
       orchestrated: true,
       targetRoute: {
-        path: "/user/v1/discussions/messages/id",
-        type: "POST",
+        path: "/user/v1/discussions/messages/:id",
+        type: "PUT",
         functionName: "updateMessage",
       },
     },
@@ -721,8 +721,8 @@ module.exports = {
       inSequence: true,
       orchestrated: true,
       targetRoute: {
-        path: "/user/v1/discussions/messages/id",
-        type: "POST",
+        path: "/user/v1/discussions/messages/:id",
+        type: "DELETE",
         functionName: "deleteMessage",
       },
     },
