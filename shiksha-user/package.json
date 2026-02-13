@@ -1,6 +1,6 @@
 {
   "name": "shiksha-user",
-  "version": "1.3.7",
+  "version": "1.4.0",
   "description": "Npm package for Shiksha-User service integration with Interface service. ",
   "main": "index.js",
   "scripts": {

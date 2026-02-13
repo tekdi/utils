@@ -661,6 +661,17 @@ module.exports = {
       },
     },
     {
+      sourceRoute: "/interface/v1/cohort/geographical-hierarchy",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/cohort/geographical-hierarchy",
+        type: "POST",
+        functionName: "getCohortHierarchy",
+      }
+    },
+    {
       sourceRoute: "/interface/v1/send-otp-mail",
       type: "POST",
       inSequence: true,
@@ -669,6 +680,61 @@ module.exports = {
         path: "/user/v1/send-otp-mail",
         type: "POST",
         functionName: "sendOtpOnMail",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/discussions/groups/messages",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/discussions/groups/messages",
+        type: "POST",
+        functionName: "sendMessageToGroup",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/discussions/groups/messages",
+      type: "GET",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/discussions/groups/messages",
+        type: "POST",
+        functionName: "getMessagesOfGroup",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/discussions/messages/:id",
+      type: "PUT",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/discussions/messages/id",
+        type: "POST",
+        functionName: "updateMessage",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/discussions/messages/:id",
+      type: "DELETE",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/discussions/messages/id",
+        type: "POST",
+        functionName: "deleteMessage",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/discussions/groups/search",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "/user/v1/discussions/groups/search",
+        type: "POST",
+        functionName: "serchInGroups",
       },
     },
   ],
