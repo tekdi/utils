@@ -99,5 +99,49 @@ module.exports = {
         functionName: "updateQueue",
       },
     },
+    {
+      sourceRoute: "/interface/v1/notification/inApp",
+      type: "POST",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "inApp",
+        type: "POST",
+        functionName: "createInApp",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/notification/inApp",
+      type: "GET",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "inApp",
+        type: "GET",
+        functionName: "getInAppNotifications",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/notification/inApp/:id/mark-read",
+      type: "PATCH",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "inApp/:id/mark-read",
+        type: "PATCH",
+        functionName: "markAsRead",
+      },
+    },
+    {
+      sourceRoute: "/interface/v1/notification/inApp/:id/mark-read",
+      type: "GET",
+      inSequence: true,
+      orchestrated: true,
+      targetRoute: {
+        path: "inApp/:id/mark-read",
+        type: "GET",
+        functionName: "getReadStatus",
+      },
+    }
   ],
 };
