@@ -105,7 +105,7 @@ module.exports = {
       inSequence: true,
       orchestrated: true,
       targetRoute: {
-        path: "inApp",
+        path: "notification/inApp",
         type: "POST",
         functionName: "createInApp",
       },
@@ -116,7 +116,7 @@ module.exports = {
       inSequence: true,
       orchestrated: true,
       targetRoute: {
-        path: "inApp",
+        path: "notification/inApp",
         type: "GET",
         functionName: "getInAppNotifications",
       },
@@ -127,7 +127,7 @@ module.exports = {
       inSequence: true,
       orchestrated: true,
       targetRoute: {
-        path: "inApp/:id/mark-read",
+        path: "notification/inApp/:id/mark-read",
         type: "PATCH",
         functionName: "markAsRead",
       },
@@ -138,7 +138,7 @@ module.exports = {
       inSequence: true,
       orchestrated: true,
       targetRoute: {
-        path: "inApp/:id/mark-read",
+        path: "notification/inApp/:id/mark-read",
         type: "GET",
         functionName: "getReadStatus",
       },
